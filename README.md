@@ -29,11 +29,13 @@ This tool uploads a local Microsoft Office file to Google Drive, converts it to 
 - It does not permanently delete your original local file.
 - It does not guarantee perfect formatting conversion. Google’s conversion engine controls that.
 
-## Tip jar
+## Quick start
 
-If this saved you time, a small tip is appreciated but absolutely not required.
-
-**Venmo: @drandall70 / https://venmo.com/u/drandall70**
+1. Download the files.
+2. Put them in C:\OpenInGoogle.
+3. Add your own Google OAuth `credentials.json`.
+4. Run `python -m pip install -r requirements.txt`.
+5. Right-click an Office file and choose Open in Google Docs.
 
 ## Install summary
 
@@ -58,3 +60,9 @@ C:\OpenInGoogle\credentials.json
 Do not share `credentials.json` or `token.json`.
 
 See `SECURITY_AND_PRIVACY.md`.
+
+## Tip jar
+
+If this saved you time, a small tip is appreciated but absolutely not required.
+
+**Venmo: @drandall70 / https://venmo.com/u/drandall70**

@@ -9,6 +9,7 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -18,18 +19,19 @@ jobs:
         with:
           python-version: "3.12"
 
-       - name: Install Python dependencies
+      - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
           python -m pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib pyinstaller
           python -m pip show pyinstaller
-          
-           - name: Build OpenInGoogle.exe
+
+      - name: Build OpenInGoogle.exe
         run: |
           pyinstaller OpenInGoogle.spec --clean --noconfirm
 
       - name: Install Inno Setup
-        run: choco install innosetup -y
+        run: |
+          choco install innosetup -y
 
       - name: Build installer
         run: |

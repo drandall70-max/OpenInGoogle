@@ -36,9 +36,12 @@ Source: "..\credentials-folder\SAVE_YOUR_GOOGLE_CREDENTIALS_HERE.txt"; DestDir: 
 Name: "{group}\OpenInGoogle"; Filename: "{app}\{#MyAppExeName}"
 Name: "{group}\Setup Google Credentials"; Filename: "{app}\{#MyAppExeName}"; Parameters: "--setup-credentials"
 Name: "{group}\Open Credentials Folder"; Filename: "{app}\{#MyAppExeName}"; Parameters: "--open-credentials-folder"
-Name: "{group}\Beginner Credential Guide"; Filename: "{app}\OBTAIN_GOOGLE_CREDENTIALS_BEGINNER_GUIDE.md"
-Name: "{group}\Setup Instructions"; Filename: "{app}\SETUP_FOR_USERS.md"
-Name: "{group}\Security and Privacy"; Filename: "{app}\SECURITY_AND_PRIVACY.md"
+
+Name: "{group}\Beginner Credential Guide"; Filename: "notepad.exe"; Parameters: """{app}\OBTAIN_GOOGLE_CREDENTIALS_BEGINNER_GUIDE.md"""
+Name: "{group}\Setup Instructions"; Filename: "notepad.exe"; Parameters: """{app}\SETUP_FOR_USERS.md"""
+Name: "{group}\Security and Privacy"; Filename: "notepad.exe"; Parameters: """{app}\SECURITY_AND_PRIVACY.md"""
+Name: "{group}\Troubleshooting"; Filename: "notepad.exe"; Parameters: """{app}\TROUBLESHOOTING.md"""
+
 Name: "{group}\Uninstall OpenInGoogle"; Filename: "{uninstallexe}"
 
 [Registry]
@@ -73,5 +76,5 @@ Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.ppt\shell\OpenInGo
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.ppt\shell\OpenInGoogle\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#MyAppExeName}"" ""%1"""; Flags: uninsdeletekey
 
 [Run]
-Filename: "{app}\SETUP_FOR_USERS.md"; Description: "Open setup instructions"; Flags: postinstall shellexec skipifsilent
+Filename: "notepad.exe"; Parameters: """{app}\SETUP_FOR_USERS.md"""; Description: "Open setup instructions"; Flags: postinstall skipifsilent
 Filename: "{app}\{#MyAppExeName}"; Parameters: "--setup-credentials"; Description: "Start Google credentials setup"; Flags: postinstall skipifsilent

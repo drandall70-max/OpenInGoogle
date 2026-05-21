@@ -41,4 +41,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: OpenInGoogleSetup
-          path: release\OpenInGoogleSetup-v1.1.2.exe
+          path: release\*.exe

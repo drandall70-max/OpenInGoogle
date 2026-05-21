@@ -61,6 +61,26 @@ Do not share `credentials.json` or `token.json`.
 
 See `SECURITY_AND_PRIVACY.md`.
 
+## Known limitations
+
+This is an early/simple version focused on basic Office-to-Google conversion through Google Drive.
+
+Potential edge cases include:
+
+- Complex Word, Excel, or PowerPoint formatting may not convert perfectly.
+- Excel VBA macros are not preserved or converted into working Google Sheets scripts.
+- Password-protected Office files are not supported.
+- Very large files may take longer to upload or convert.
+- Older binary Office formats, especially legacy `.xls` files, may be unreliable.
+- Some older or unusual binary Excel files may not convert at all.
+- Nonstandard CSV files may not import cleanly.
+- CSV encoding issues, such as non-UTF-8 files or unusual delimiters, may cause bad formatting or failed imports.
+- Embedded objects, linked files, custom fonts, charts, images, and advanced layouts may not convert cleanly.
+- Google Workspace admin policies may block or restrict Drive API access for some managed accounts.
+- The app currently creates a new converted Google file each time rather than checking for an existing converted copy.
+- The app requires users to provide their own Google OAuth Desktop App `credentials.json`.
+- The app is not intended to replace Microsoft Office for high-fidelity editing of complex files.
+
 ## Tip jar
 
 If this saved you time, a small tip is appreciated but absolutely not required.

@@ -18,14 +18,15 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install Python dependencies
+       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt
-
-      - name: Build OpenInGoogle.exe
+          python -m pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib pyinstaller
+          python -m pip show pyinstaller
+          
+           - name: Build OpenInGoogle.exe
         run: |
-          python -m PyInstaller OpenInGoogle.spec --clean --noconfirm
+          pyinstaller OpenInGoogle.spec --clean --noconfirm
 
       - name: Install Inno Setup
         run: choco install innosetup -y

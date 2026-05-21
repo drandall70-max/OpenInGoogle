@@ -1,56 +1,27 @@
 # Troubleshooting
 
-## Error: Missing credentials.json
+## Missing credentials.json
 
-Fix:
+Open:
 
-1. Download your OAuth Desktop App JSON from Google Cloud Console.
-2. Rename it to `credentials.json`.
-3. Save it in `C:\OpenInGoogle`.
-
-## Browser says app is not verified
-
-This can happen when you create your own Google OAuth app for personal use.
-
-Fix:
-
-- Make sure you are signing in with an account allowed on the OAuth consent screen.
-- If the app is in testing mode, add your Google account as a test user.
-
-## ModuleNotFoundError
-
-Fix:
-
-```powershell
-cd C:\OpenInGoogle
-python -m pip install -r requirements.txt
+```text
+OpenInGoogle > Credential Setup Wizard
 ```
 
-## Permission denied or execution policy error in PowerShell
+Then select your downloaded Google OAuth Desktop App JSON file.
 
-Run this only for the current PowerShell session:
+## Google says the app is not verified
 
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-```
+For personal testing, make sure your Google account is added as a test user in the Google Cloud OAuth consent screen.
 
-Then run the install script again.
+## Right-click menu does not appear
 
-## The right-click menu does not show up
+Try restarting Windows Explorer or signing out and signing back in.
 
-Try restarting File Explorer:
+## Uninstall
 
-1. Open Task Manager.
-2. Find Windows Explorer.
-3. Right-click it.
-4. Choose Restart.
+Use:
 
-## I want to remove it
-
-Run:
-
-```powershell
-cd C:\OpenInGoogle
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.\UNINSTALL_CONTEXT_MENU.ps1
+```text
+Settings > Apps > Installed apps > OpenInGoogle > Uninstall
 ```

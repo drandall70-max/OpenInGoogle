@@ -1,20 +1,14 @@
 # Security and Privacy
 
-This utility uses the official Google Drive API.
+OpenInGoogle uses the official Google Drive API.
 
-## Google permission used
-
-The script uses this OAuth scope:
+## OAuth scope
 
 ```text
 https://www.googleapis.com/auth/drive.file
 ```
 
-That scope is narrower than full Drive access.
-
-## Files you should never share
-
-Do not upload or post these files publicly:
+## Files not to share
 
 ```text
 credentials.json
@@ -23,16 +17,15 @@ token.json
 
 ## What gets uploaded
 
-Only the file you choose to open is uploaded to your Google Drive.
+Only the file you choose to open is uploaded to your Google Drive. The original local file is not deleted or modified.
 
-## Where the converted file goes
+## Where credentials are stored
 
-The converted Google Docs, Sheets, or Slides file is created in your Google Drive.
+```text
+%APPDATA%\OpenInGoogle\credentials.json
+%APPDATA%\OpenInGoogle\token.json
+```
 
-## Formatting
+## Developer access
 
-Conversion quality is controlled by Google Drive/Google Workspace.
-
-## Macro warning
-
-Excel macro files like `.xlsm` can be uploaded and converted, but Google Sheets does not preserve Excel VBA macros as runnable Excel macros.
+Files are uploaded directly from your computer to your own Google Drive. The developer does not receive or store your files.
